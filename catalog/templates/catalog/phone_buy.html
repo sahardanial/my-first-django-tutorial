@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>BUY PHONE</h1>
+    <form method="POST" class="BuyPhoneForm-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">خرید نهایی</button>
+    </form>
+  <p>Response time: {{ response_time.60_seconds }}</p>
+{% endblock %}

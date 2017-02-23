@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>لیست همه محصولات</h1>
+
+    {% if phones %}
+    <ul>
+
+      {% for phone in phones %}
+      <li>
+        <a href="{{ phone.get_absolute_url }}">{{ phone.name }}</a> ({{phone.costomoption}})
+      </li>
+      {% endfor %}
+    </ul>
+    <div class="pagination">
+      <span class="step-links">
+        {% if phones.has_previous %}
+            <a href="?page={{ phones.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ phones.number }} of {{ phones.paginator.num_pages }}
+        </span>
+
+        {% if phones.has_next %}
+            <a href="?page={{ phones.next_page_number }}">next</a>
+        {% endif %}
+      </span>
+    </div>
+    {% else %}
+      <p>متاسفانه هنوز محصولی  برای خرید وجود ندارد!</p>
+    {% endif %}
+{% endblock %}

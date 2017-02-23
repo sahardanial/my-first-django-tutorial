@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>تبریک!-فاکتور خرید شما:</h1>
+  <p>شما محصول موردنظر خود را با موفقیت خریداری کردید</p>
+  <p><strong>نام:</strong> {{ phone.name }}</p>
+  <p><strong>توضیحات:</strong> {{ phone.description }}</p>
+  <p><strong>نام کاربری خریدار:</strong>{{ user }}</p>
+  <p><strong>نام خریدار:</strong>{{ fname }}</p>
+  <p><strong>نام خانوادگی خریدار:</strong>{{ lname }}</p>
+  <p><strong>ایمیل خریدار:</strong>{{ email }}</p>
+  <p><strong>تاریخ خرید:</strong>{{ time }}</p>
+  <a href="{% url 'phones' %}" class="btn btn-primary">بازگشت به صفحه محصولات</a>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>costomoption List</h1>
+
+    {% if costomoptions %}
+    <ul>
+
+      {% for costomoption in costomoptions %}
+      <li>
+        <a href="{{ costomoption.get_absolute_url }}">
+        {{cpu}}{{RAMmemory}}</a>
+
+        <p><strong>Photo:</strong> {{phone.photo}}</p
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no phones in the phoneshop.</p>
+    {% endif %}
+{% endblock %}

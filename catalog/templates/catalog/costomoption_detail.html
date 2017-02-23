@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <h1>CostomOption: {{ costomoption }} </h1>
+
+
+  <p><strong>cpu:</strong> {{ costomoption.cpu }}</p>
+  <p><strong>RAM:</strong> {{ costomoption.RAMmemory }}</p>
+  <p><strong>حافظه اصلی:</strong> {{ costomoption.internalmemory }}</p>
+  <p><strong>کیفیت دوربین:</strong> {{ costomoption.qualitycamera}}</p>
+
+  {% for phone in phones %}
+    <div>
+     <ul>
+      <li><a href="{{ phone.get_absolute_url }}">{{ phone }}</a></li>
+     </ul>
+   </div>
+  {% endfor %}
+</div>
+{% endblock %}

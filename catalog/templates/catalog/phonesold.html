@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>کالاهای خریداری شده توسط شما</h2>
+  {% for copy in phonesold %}
+  <div>
+    <ul>
+    <li><strong>نام:</strong> {{ copy.product }}</li>
+    <li><strong>تاریخ خرید:</strong> {{ copy.time_of_purchase }}</li>
+  </ul>
+  </div>
+  {% endfor %}
+  <a href="{% url 'index' %}" class="btn btn-primary">بازگشت به صفحه اصلی</a>
+
+{% endblock %}

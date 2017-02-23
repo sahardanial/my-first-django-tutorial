@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+  <h1>{{ phone.name }}</h1>
+
+  <p><strong>مشخصات موبایل:</strong> <a href="{% url 'costomoption-detail' phone.costomoption.pk %}">{{ phone.costomoption }}</a></p>
+  <p><strong>قیمت:</strong> {{ phone.price }}</p>
+
+  <div style="margin-left:20px;margin-top:20px">
+
+  {% for copy in phone.repository_set.all %}
+    <hr>
+    {% if copy.numbers > 0 %}
+       <p class="text-success">{{ copy.get_status_display }}</p>
+       <p><strong>موجودی:</strong> {{ copy.numbers }}</p>
+       <a href="{% url 'phone_buy' pk=copy.pk %}" class="btn btn-success btn-lg">خرید</a>
+    {% else %}
+    <p class="text-danger">{{ copy.get_status_display }}</p>
+    <p><strong>موجودی:</strong> {{ copy.numbers }}</p>
+    {% endif %}
+  {% endfor %}
+
+  </div>
+{% endblock %}

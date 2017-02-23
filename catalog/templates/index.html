@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>phone Home</h1>
+
+  <p>Welcome to <em>phone shop</em></p>
+
+<h2>Dynamic content</h2>
+
+  <p>The phoneshop has the following record counts:</p>
+  <ul>
+    <li><strong>محصولات:</strong> {{ num_phones }}</li>
+  </ul>
+  <p><h1>Most Popular phone</h1></p>
+  {% load static %}
+  <p><h2>samsung note5</h2></p>
+  <a><img src="{% static "catalog/samsung-galaxy-note5.jpg" %}" alt=""/></a>
+
+
+  <p><h2>iphon7</h2></p>
+  <a><img src="{% static "catalog/lqtn1474269144262.jpg" %}" alt=""/></a>
+  <p>You have visited this page {{ num_visits }}{% if num_visits == 1 %} time{% else %} times{% endif %}.</p>
+
+{% endblock %}

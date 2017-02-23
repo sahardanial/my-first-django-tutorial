@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>عضویت در سایت</h1>
+    <form method="POST" class="SignupForm-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">تایید</button>
+    </form>
+{% endblock %}
